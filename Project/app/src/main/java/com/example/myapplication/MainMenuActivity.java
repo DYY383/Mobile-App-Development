@@ -9,13 +9,25 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainMenuActivity extends AppCompatActivity {
 
+    Button btnStartTrivia,btnStartPractice;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_menu);
 
-        Button practiceBtn = findViewById(R.id.practiceModeBtn);
-        practiceBtn.setOnClickListener(new View.OnClickListener() {
+        btnStartTrivia = findViewById(R.id.btnStartTrivia);
+        btnStartPractice = findViewById(R.id.btnStartPractice);
+
+        btnStartTrivia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainMenuActivity.this, TriviaGameActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnStartPractice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainMenuActivity.this, PracticeModeActivity.class);

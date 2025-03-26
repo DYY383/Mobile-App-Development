@@ -31,8 +31,10 @@
             </intent-filter>
         </activity>
 
-        <!-- ✅ Practice Mode Activity Declaration -->
         <activity android:name=".PracticeModeActivity" />
+
+        <activity android:name=".TriviaGameActivity" />
+
 
     </application>
 

@@ -61,6 +61,20 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
+    public void updateHighScore(String username, int newScore) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("SELECT highscore FROM course WHERE username = ?", new String[]{username});
+
+        if (cursor.moveToFirst()) {
+            int currentScore = cursor.getInt(0);
+            if (newScore > currentScore) {
+                ContentValues contentValues = new ContentValues();
+                contentValues.put("highscore", newScore);
+                db.update("course", contentValues, "username = ?", new String[]{username});
+            }
+        }
+        cursor.close();
+    }
 
 
 

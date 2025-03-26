@@ -3,6 +3,9 @@ plugins {
 }
 
 android {
+    viewBinding {
+        enable = true  // Use "enable" instead of "enabled"
+    }
     namespace = "com.example.myapplication"
     compileSdk = 35
 

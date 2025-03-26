@@ -14,6 +14,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class LogSignActivity extends AppCompatActivity {
 
+    public static String loggedInUser = null;
+
+
     Button submit_btn;
     EditText txt_username, txt_password;
 
@@ -76,6 +79,7 @@ public class LogSignActivity extends AppCompatActivity {
 
         //Check if we have an exact match in database
         if (dblogin.account_login_match(username,password)){
+            loggedInUser = username;
             Toast.makeText(getApplicationContext(),"Matching Account Found!", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(LogSignActivity.this, MainMenuActivity.class);
             startActivity(intent);
