@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainMenuActivity extends AppCompatActivity {
 
-    Button btnStartTrivia,btnStartPractice;
+    Button btnStartTrivia,btnStartPractice,btnLeaderboard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +18,7 @@ public class MainMenuActivity extends AppCompatActivity {
 
         btnStartTrivia = findViewById(R.id.btnStartTrivia);
         btnStartPractice = findViewById(R.id.btnStartPractice);
+        btnLeaderboard = findViewById(R.id.btnLeaderboard);
 
         btnStartTrivia.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,6 +32,14 @@ public class MainMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainMenuActivity.this, PracticeModeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnLeaderboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainMenuActivity.this, LeaderboardActivity.class);
                 startActivity(intent);
             }
         });
