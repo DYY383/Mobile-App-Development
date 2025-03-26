@@ -167,8 +167,7 @@ public class TriviaGameActivity extends AppCompatActivity {
 
         DBHelper dbHelper = new DBHelper(this, "accounts_database", null, 2);
         dbHelper.updateHighScore(currentUsername, score);
-
-        Intent intent = new Intent(TriviaGameActivity.this, MainMenuActivity.class);
+        Intent intent = new Intent(TriviaGameActivity.this, LeaderboardActivity.class);
         intent.putExtra("score", score);
         startActivity(intent);
         finish();
