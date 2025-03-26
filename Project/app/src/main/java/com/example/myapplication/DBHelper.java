@@ -75,8 +75,21 @@ public class DBHelper extends SQLiteOpenHelper {
         }
         cursor.close();
     }
-
-
+    public Cursor getTopScores(int limit) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT username, highscore FROM course ORDER BY highscore DESC LIMIT ?";
+        return db.rawQuery(query, new String[]{String.valueOf(limit)});
+    }
+    public int getUserHighScore(String username) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT highscore FROM course WHERE username = ?", new String[]{username});
+        int highScore = 0; // Default value if not found
+        if (cursor.moveToFirst()) {
+            highScore = cursor.getInt(0);
+        }
+        cursor.close();
+        return highScore;
+    }
 
 
 }
