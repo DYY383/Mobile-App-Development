@@ -60,7 +60,7 @@ public class LogSignActivity extends AppCompatActivity {
 
     //For a start I put in Username abc and password 123 for testing
     void submit_login(String username,String password,DBHelper dblogin){
-        /*
+/*
         //Prints Database
         Cursor cursor = dblogin.displayData();
         String cursorInfo ="";
@@ -68,7 +68,7 @@ public class LogSignActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"Nothing to display!", Toast.LENGTH_LONG).show();
         }else{
             while(cursor.moveToNext()){
-                cursorInfo +="\nUsername: "+cursor.getString(0)+" Password: "+cursor.getString(1);
+                cursorInfo +="\nUSERNM: "+cursor.getString(0)+" PSWD: "+cursor.getString(1)+" HS: "+cursor.getString(2);
             }
         }
         AlertDialog.Builder alertMessage = new AlertDialog.Builder(LogSignActivity.this);
@@ -77,9 +77,13 @@ public class LogSignActivity extends AppCompatActivity {
         alertMessage.setCancelable(true);
         alertMessage.show();*/
 
+
+        txt_password.setText("");
+
         //Check if we have an exact match in database
         if (dblogin.account_login_match(username,password)){
             loggedInUser = username;
+            txt_username.setText("");
             Toast.makeText(getApplicationContext(),"Matching Account Found!", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(LogSignActivity.this, MainMenuActivity.class);
             startActivity(intent);
@@ -92,9 +96,13 @@ public class LogSignActivity extends AppCompatActivity {
     void create_account(String username,String password,DBHelper dblogin){
         if (dblogin.account_exist(username)){
             Toast.makeText(getApplicationContext(),"Account Already Exists!", Toast.LENGTH_LONG).show();
+            txt_username.setText("");
+            txt_password.setText("");
         }else{
             dblogin.addItems(username, password);
             Toast.makeText(getApplicationContext(),"Account Created!", Toast.LENGTH_LONG).show();
+            txt_username.setText("");
+            txt_password.setText("");
         }
 
     }

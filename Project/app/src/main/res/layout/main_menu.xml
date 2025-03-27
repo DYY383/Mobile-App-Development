@@ -8,37 +8,79 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="15dp">
 
-        <Button
-            android:id="@+id/btnStartTrivia"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:backgroundTint="#4CAF50"
-            android:text="Start Trivia Game"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp" />
+            android:layout_height="475dp"
+            android:background="#6750A3"
+            android:orientation="vertical"
+            android:padding="25dp">
 
-        <Button
-            android:id="@+id/btnStartPractice"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:backgroundTint="#4CAF50"
-            android:text="Practice Mode"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp" />
+            <TextView
+                android:id="@+id/textView"
+                style="@style/Widget.Material3.Snackbar.TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="-10dp"
+                android:background="#00FFFFFF"
+                android:gravity="center_horizontal"
+                android:text="TRIVIA TIME!"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="45dp"
+                android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/btnLeaderboard"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:backgroundTint="#4CAF50"
-            android:text="Leaderboards"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp" />
+            <Button
+                android:id="@+id/btnStartTrivia"
+                style="@style/Widget.MaterialComponents.TimePicker.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="#3E0C80"
+                android:text="Trivia Trials"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnStartPractice"
+                style="@style/Widget.MaterialComponents.TimePicker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="#3E0C80"
+                android:text="Practice Mode"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnLeaderboard"
+                style="@style/Widget.MaterialComponents.TimePicker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="#3E0C80"
+                android:text="Leaderboards"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnLogout"
+                style="@style/Widget.MaterialComponents.TimePicker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="#3E0C80"
+                android:text="Logout"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </LinearLayout>
     </LinearLayout>
 
 

@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainMenuActivity extends AppCompatActivity {
 
-    Button btnStartTrivia,btnStartPractice,btnLeaderboard;
+    Button btnStartTrivia,btnStartPractice,btnLeaderboard,btnLogout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +19,14 @@ public class MainMenuActivity extends AppCompatActivity {
         btnStartTrivia = findViewById(R.id.btnStartTrivia);
         btnStartPractice = findViewById(R.id.btnStartPractice);
         btnLeaderboard = findViewById(R.id.btnLeaderboard);
+        btnLogout = findViewById(R.id.btnLogout);
+
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         btnStartTrivia.setOnClickListener(new View.OnClickListener() {
             @Override

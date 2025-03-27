@@ -4,6 +4,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -35,6 +36,8 @@ public class LeaderboardActivity extends AppCompatActivity {
     private void displayLeaderboard() {
         // Fetch top scores
         Cursor topScoresCursor = dbHelper.getTopScores(10);
+
+
         List<LeaderboardEntry> leaderboardEntries = new ArrayList<>();
         int rank = 1;
         while (topScoresCursor.moveToNext()) {
@@ -43,6 +46,7 @@ public class LeaderboardActivity extends AppCompatActivity {
             leaderboardEntries.add(new LeaderboardEntry(rank++, username, highScore));
         }
         topScoresCursor.close();
+        //Toast.makeText(this, String.valueOf(leaderboardEntries.size()), Toast.LENGTH_SHORT).show();
 
         // Set up RecyclerView adapter
         LeaderboardAdapter adapter = new LeaderboardAdapter(leaderboardEntries);
