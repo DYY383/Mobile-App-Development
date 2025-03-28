@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     android:fitsSystemWindows="true"
     tools:context=".LogSignActivity">
 
@@ -11,7 +12,7 @@
         android:layout_width="325dp"
         android:layout_height="275dp"
         android:layout_gravity="center"
-        android:background="#BCD4E7"
+        android:background="#B1CFE7"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="22dp">
@@ -20,6 +21,8 @@
             android:id="@+id/toggleButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:background="#F2FCFD"
             android:checked="true"
             android:textOff="Mode: Create Account"
             android:textOn="Mode: Login" />
@@ -37,6 +40,7 @@
             android:id="@+id/editTextPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:ems="10"
             android:hint="Password"
             android:inputType="text"
